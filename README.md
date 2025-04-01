@@ -14,7 +14,6 @@ proyecto-final/
 ├── usuarios/              # Carpeta para almacenar los usuarios del sistema
 ├── README.md              # Este archivo de documentación
 └── main.sh                # Script con el menú interactivo
-
 ´´´
 
 
