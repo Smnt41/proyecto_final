@@ -2,6 +2,8 @@
 
 #Este script es para gestionar usuarios y permisos
 
+#Dar permisos ejecución script
+sudo chmod + x /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/scripts/usuarios.sh
 
 #Crear usuarios
 sudo useradd admin1 tecnico1 auditor1
@@ -31,5 +33,5 @@ sudo chmod +t /tmp/empresa/compartido
 sudo setfacl -m u:auditor1:rwx /tmp/empresa/tecnicos
 
 #Mensaje final para saber si se ha ejecutado el script
-print("Script para gestión de usuarios finalizado")
+echo("Script para gestión de usuarios finalizado")
 
