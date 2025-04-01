@@ -2,6 +2,7 @@
 
 #Dar permisos de ejecución
 sudo chmod +x /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/main.sh
+echo "Permisos de ejecución para main.sh"
 
 # Función para mostrar el menú
 menu() {
@@ -17,20 +18,20 @@ menu() {
 
 #Crear estructura de usuarios y permisos
 script_usuarios() {
-    /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/scripts/usuarios.sh
-    
+	/mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/scripts/usuarios.sh
 }
+
 
 #Generar y analizar logs
 script_logs() {
-    /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/scripts/logs.sh
-    
+	/mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/scripts/logs.sh
 }
+
 
 # Función para crear un backup simulado
 crear_backup() {
-    echo "Creando backup simulado de directorios críticos..."
-    # Simulando un backup
+    echo "Creando Backup"
+    cp -r /home/samantha/datos_criticos_backup /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/respaldo
     echo "Backup completado."
 }
 
@@ -48,7 +49,7 @@ limpiar_archivos() {
 
 # Menú interactivo
 while true; do
-    mostrar_menu
+    menu
     read opcion
     case $opcion in
         1)

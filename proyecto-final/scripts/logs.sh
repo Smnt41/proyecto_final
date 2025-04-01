@@ -1,11 +1,10 @@
 #!/bin/bash
+#Dar permiso ejecucion a logs.sh
+sudo chmod +x /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/scripts/logs.sh
 
-#Dar permisos de ejecución al script
-sudo chmod + x /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/logs/logs.sh
+#Crear archivo eventos.log
 
-#Crear archivo eventos.log con entradas
-
-sudo cat > /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/logs/logs.sh << EOF
+cat > /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/logs/eventos.log << EOF
 2025-04-01 08:00:01 [INFO] El sistema ha arrancado correctamente.
 2025-04-01 08:05:13 [INFO] Usuario 'admin' ha iniciado sesión correctamente desde la IP 192.168.1.10.
 2025-04-01 08:10:45 [INFO] El servicio SSH ha comenzado a ejecutarse.
@@ -24,7 +23,7 @@ sudo cat > /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/logs/logs.sh
 2025-04-01 11:10:21 [INFO] El sistema ha detectado una actualización de seguridad para el paquete 'openssl'. Iniciando actualización.
 2025-04-01 11:30:05 [INFO] La actualización del paquete 'openssl' se completó correctamente.
 2025-04-01 11:45:50 [ERROR] El servicio de correo electrónico no pudo enviar el correo a 'user@example.com'. Error: 'Timeout'.
-2025-04-01 12:00:00 [INFO] El usuario 'jose' ha iniciado sesión correctamente desde la IP 192.168.1.30.
+2025-04-01 12:00:00 [INFO] El usuario 'samantha' ha iniciado sesión correctamente desde la IP 192.168.1.30.
 2025-04-01 12:15:45 [ERROR] El servicio de red no pudo resolver la dirección IP 'www.ejemplo.com'. Error: 'DNS Resolution Failure'.
 2025-04-01 12:45:00 [INFO] Se ha realizado una nueva conexión SSH desde la IP 192.168.1.25.
 2025-04-01 13:00:00 [BACKUP] El sistema ha comenzado un nuevo proceso de backup completo.
@@ -42,16 +41,20 @@ sudo cat > /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/logs/logs.sh
 EOF
 
 #Buscar número de errores en el log
+echo "Número de errores: "
 sudo grep -c -i "error" /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/logs/eventos.log
 
 #Buscar últimos 5 errores
+echo "Últimos 5 errores: "
 sudo grep -i "error" /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/logs/eventos.log | tail -n 5
 
 #Ver mensajes más frecuentes
+echo "Mensajes más frecuentes: "
 sudo cut -d ' ' /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/logs/eventos.log -f3 | sort | uniq -c | sort -nr
 
 #Ver usuarios con mayor actividad
-sudo grep -oiP "usuario '\K\w+" /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final | sort  | uniq -c | tail -n 1
+echo "Usuarios con mayor actividad: "
+sudo grep -oiP "usuario '\K\w+" /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/logs/eventos.log | sort | uniq -c | head -n 1
 
 #Mensaje para indicar que el script ha acabado
-echo("El script de análisis del log ha finalizado")
+echo "El script de análisis del log ha finalizado"

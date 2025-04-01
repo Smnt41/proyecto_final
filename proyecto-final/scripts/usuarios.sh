@@ -3,13 +3,16 @@
 #Este script es para gestionar usuarios y permisos
 
 #Dar permisos ejecución script
-sudo chmod + x /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/scripts/usuarios.sh
+sudo chmod +x /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/scripts/usuarios.sh
 
 #Crear usuarios
-sudo useradd admin1 tecnico1 auditor1
+sudo useradd admin1
+sudo useradd tecnico1
+sudo useradd auditor1
 
 #Crear grupos
-sudo groupadd administracion tecnicos
+sudo groupadd administracion
+sudo groupadd tecnicos
 
 #Unir usuarios a grupos
 sudo usermod -aG administracion admin1
@@ -30,8 +33,9 @@ sudo chmod g+s /tmp/empresa/tecnicos
 sudo chmod +t /tmp/empresa/compartido
 
 #Setfacl permisos auditor1
+sudo apt-get install acl
 sudo setfacl -m u:auditor1:rwx /tmp/empresa/tecnicos
 
 #Mensaje final para saber si se ha ejecutado el script
-echo("Script para gestión de usuarios finalizado")
+echo "Script para gestión de usuarios finalizado"
 
