@@ -1,8 +1,11 @@
 #!/bin/bash
 
+#Dar permisos de ejecución
+sudo chmod +x /mnt/c/Users/Admin/Desktop/proyecto_final/proyecto-final/main.sh
+
 # Función para mostrar el menú
 menu() {
-    echo " Menú Principal"
+    echo "Menú Principal"
     echo "1. Crear estructura de usuarios y permisos"
     echo "2. Generar y analizar logs"
     echo "3. Crear backup de directorios críticos"
