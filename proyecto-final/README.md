@@ -3,7 +3,7 @@
 Este proyecto tiene como objetivo la automatización de varias tareas administrativas en un entorno de servidor Linux, a través de un menú interactivo que permite ejecutar diferentes acciones relacionadas con la gestión de usuarios, análisis de logs, respaldos de datos y limpieza de archivos temporales.
 
 ## Estructura del Proyecto
-
+```
 La estructura del proyecto es la siguiente:
 proyecto-final/
 ├── scripts/               # Contiene los scripts para las distintas tareas
@@ -14,18 +14,18 @@ proyecto-final/
 ├── usuarios/              # Carpeta para almacenar los usuarios del sistema
 ├── README.md              # Este archivo de documentación
 └── main.sh                # Script con el menú interactivo
-
+```
 
 
 ## Funcionalidades
 Se crea una carpeta para el proyecto llamada proyecto-final. Dentro de esta carpeta se encuentran las subcarpetas: scripts, logs, respaldo y usuarios el archivo README.md y el script main.sh.
 Se realiza un script "main.sh" para automatizar diferentes tareas:
-1)Gestión de usuarios y permisos: Esta opción llama al script usuarios.sh de la carpeta scripts
-2)Generar y analizar logs: Esta opción llama al script logs.sh de la carpeta scripts
-3)Crear backup de directorios críticos: Esta opción copia el directorio /home/samantha/datos_criticos_backup a la carpeta de proyecto-final llamada respaldos.
-4)Mostrar espacio disponible en disco: Esta opción ejecuta el comando df -h
-5)Limpiar archivos temporales viejos: Esta opción elimina los archivos del directorio /temp
-6)Salir: Esta opción te permite salir del menú.
+- 1)Gestión de usuarios y permisos: Esta opción llama al script usuarios.sh de la carpeta scripts
+- 2)Generar y analizar logs: Esta opción llama al script logs.sh de la carpeta scripts
+- 3)Crear backup de directorios críticos: Esta opción copia el directorio /home/samantha/datos_criticos_backup a la carpeta de proyecto-final llamada respaldos.
+- 4)Mostrar espacio disponible en disco: Esta opción ejecuta el comando df -h
+- 5)Limpiar archivos temporales viejos: Esta opción elimina los archivos del directorio /temp
+- 6)Salir: Esta opción te permite salir del menú.
 
 ### Descripción de las carpetas y archivos:
 Scripts
