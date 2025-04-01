@@ -43,7 +43,7 @@ mostrar_espacio_disco() {
 
 #Limpiar archivos temporales viejos
 limpiar_archivos() {
-    rm -rf /tmp/*
+    sudo rm -rf /tmp/*
     echo "Archivos temporales eliminados"
 }
 
