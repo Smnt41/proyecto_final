@@ -3,8 +3,8 @@
 Este proyecto tiene como objetivo la automatización de varias tareas administrativas en un entorno de servidor Linux, a través de un menú interactivo que permite ejecutar diferentes acciones relacionadas con la gestión de usuarios, análisis de logs, respaldos de datos y limpieza de archivos temporales.
 
 ## Estructura del Proyecto
+
 ´´´
-La estructura del proyecto es la siguiente:
 proyecto-final/
 ├── scripts/               # Contiene los scripts para las distintas tareas
 │   ├── usuarios.sh        # Script para gestionar usuarios y permisos
@@ -14,6 +14,7 @@ proyecto-final/
 ├── usuarios/              # Carpeta para almacenar los usuarios del sistema
 ├── README.md              # Este archivo de documentación
 └── main.sh                # Script con el menú interactivo
+
 ´´´
 
 
